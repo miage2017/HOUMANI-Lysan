@@ -1,0 +1,20 @@
+TP2
+Exercice 2 :
+Le programme lance plusieurs thread selon le chiffre passé en argument.
+Le thread 1 compte de 1 en 1; le thread 2, de 2 en 2; etc...
+La sortie standard est déterministe mais pas la partie d'attente aléatoire.
+La principale ressource utilisée par les threads est le processeur.
+
+Le programme lance une incrementation et une décrementation à partir de 0 grâce à 2 thread différents.
+En théorie, la valeur stockée devrait être 0. C'est à dire le chiffre de départ.
+En vérité, il n'en est rien car le thread 2 n'attends pas la fin du thread 1. Du coup la décrementation commence avant que l'incrementation ne se finisse ce qui donne des chiffre proche des 2 valeurs extremes (100.000.000 ou -100.000.000)
+La concurrence se trouve lors de l'execution des thread, ils se chevauchent.
+Faire une tache1.join(); pour finir le thread avant que l'autre ne commence.
+Il peut, mais ça ne veut pas dire qu'il le fait.
+
+Exercice 4 :
+Elle semble sychone mais elle ne l'est pas car c'est une petite boucle.
+Car à ce moment, le thread 1 est fini mais le 2 travaille toujours.
+
+Exercice 6 : 
+Le resultat est fiable puisqu'on attend que chaque thread et donc chaque boucle for incluse dedans ai fini.
